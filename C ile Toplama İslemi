@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("Hello world!\n");
+    int a=12, b=5, c=37;
+    printf("%d+%d+%d=%d\t",a,b,c,a+b+c);  //"\t" tab kadar boşluk birakmayi saglar.
+    float x=3.14, y= 5.18;
+printf("%f+%f=%f\a\n",x,y,x+y);           //"\a" pc'den windows sesi çikarmayi saglar.
+printf("%f+%f=%f \n",x,y,x+y);
+    return 0;
+}
