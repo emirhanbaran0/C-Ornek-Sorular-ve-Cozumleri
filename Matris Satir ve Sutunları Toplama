@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+int x,toplam=0,i=1;
+    printf("Sayilarin kaca kadar toplanacagini giriniz:");
+    scanf("%d",&x);
+    while(i<=x)
+    {
+    toplam=toplam+i;
+        i=i+1;}
+        printf("Sayilarin Toplami: %d",toplam);
+
+    return 0;
+}
