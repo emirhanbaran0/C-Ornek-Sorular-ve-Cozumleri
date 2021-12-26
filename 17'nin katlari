@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//Sizin belirledigininz sinira kadar 17'nin katlarini ekrana yazdiran program.
+//Örnek Girdi: sinir=96  --->Çıktı: 17 34 51 68 85
+int main()
+{
+int sayac=1,sinir;
+printf("Sayilarin Kaca Kadar Alinacagini Seciniz: ");
+scanf("%d",&sinir);
+   while(sayac<sinir)
+ {
+     if(sayac%(int)17==0)
+     {
+         printf ("Sayiniz 17'nin katidir: %d\n",sayac);
+     }
+      else;
+     sayac=sayac+1;
+ }
+    return 0;
+}
