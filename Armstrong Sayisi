@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{ int sayi,birler,onlar,yuzler,binler,onbinler,toplam;
+   donusnoktasi:
+   printf("Bes Basamakli Bir Sayi Giriniz: ");
+   scanf("%d",&sayi);
+   while(1==1){
+   if(sayi>9999 && sayi<100000)
+   {
+     onbinler=sayi/10000;
+
+     binler=sayi%10000;
+     binler=binler/1000;
+
+     yuzler=sayi%10000;
+     yuzler=yuzler%1000;
+     yuzler=yuzler/100;
+
+     onlar=sayi%10000;
+     onlar=onlar%1000;
+     onlar=onlar%100;
+     onlar=onlar/10;
+
+     birler=sayi%10000;
+     birler=birler%1000;
+     birler=birler%100;
+     birler=birler%10;
+
+     printf("%d%d%d%d%d\n",onbinler,binler,yuzler,onlar,birler);
+     break;
+   }
+   else{
+    printf("Istenilen Aralikta Deger Girmediniz Lufen Tekrar Deneyiniz.\n");
+    goto donusnoktasi;
+   }
+   }
+    birler=pow(birler,5);
+    yuzler=pow(yuzler,5);
+    onlar=pow(onlar,5);
+    binler=pow(binler,5);
+    onbinler=pow(onbinler,5);
+    toplam=onbinler+binler+yuzler+onlar+birler;
+    if(toplam==sayi)
+        printf("Sayiniz Armstrong Sayisidir: %d",sayi);
+    else
+         printf("Sayiniz Armstrong Sayisi Degildir!!");
+
+    return 0;
+}
