@@ -3,14 +3,39 @@
 
 int main()
 {
-int x,toplam=0,i=1;
-    printf("Sayilarin kaca kadar toplanacagini giriniz:");
-    scanf("%d",&x);
-    while(i<=x)
+   int matrix[2][2],caddition=0,laddition=0;
+   for(int a=0;a<2;a++)
+   {  printf("Enter the %d. Line Elements: \n",a+1);
+       for(int b=0;b<2;b++)
+       {
+           scanf("%d",&matrix[a][b]);
+       }
+   }
+    for(int a=0;a<2;a++)
+   {printf("\n");
+       for(int b=0;b<2;b++)
+       {
+           printf("%d",matrix[a][b]);
+       }
+   }
+   printf("\n");
+     for(int b=0;b<2;b++){
+            caddition=0;
+    for(int a=0;a<2;a++)
     {
-    toplam=toplam+i;
-        i=i+1;}
-        printf("Sayilarin Toplami: %d",toplam);
+        caddition+=matrix[a][b];
 
+     }
+      printf("%d column addition is %d\n",b+1,caddition);
+     }
+       for(int b=0;b<2;b++){
+            laddition=0;
+    for(int a=0;a<2;a++)
+    {
+        laddition+=matrix[b][a];
+
+     }
+      printf("%d line addition is %d\n",b+1,laddition);
+     }
     return 0;
 }
