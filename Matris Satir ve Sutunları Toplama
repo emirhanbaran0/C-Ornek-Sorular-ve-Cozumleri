@@ -24,7 +24,6 @@ int main()
     for(int a=0;a<2;a++)
     {
         caddition+=matrix[a][b];
-
      }
       printf("%d column addition is %d\n",b+1,caddition);
      }
