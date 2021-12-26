@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+  	float a,b,c,toplam=0;
+    donusnoktasi:
+    printf("Ahmetin Agiriligini Giriniz: ");
+    scanf("%f",&a);
+    if(a>=1 && a<=150);
+     else {
+        printf("Agirlik 1-150 araliginda olmalidir.\n");
+         goto donusnoktasi;
+         }
+    donusnoktasi2:
+     printf("Aysenin Agiriligini Giriniz: ");
+    scanf("%f",&b);
+    if(b>=1 && b<=150);
+    else {
+        printf("Agirlik 1-150 araliginda olmalidir.\n");
+         goto donusnoktasi2;
+         }
+          donusnoktasi3:
+     printf("Aslinin Agiriligini Giriniz: ");
+      scanf("%f",&c);
+    if(c>=1 && c<=150);
+    else {
+        printf("Agirlik 1-150 araliginda olmalidir.\n");
+         goto donusnoktasi3;
+         }
+
+
+    toplam=a+b+c;
+    if(toplam<=250 && toplam>=4)
+        printf("Asansore binebilirsiniz;");
+    else
+        printf("Asansöre Binemezsiniz");
+
+
+
+    return 0;
+}
