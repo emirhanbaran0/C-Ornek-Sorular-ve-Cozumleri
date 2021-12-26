@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
+
+main()
+{
+    printf("Kelimeleri Giriniz: \n");
+    char dizi[10][11];
+    int i,j;
+    for(int i=0;i<10;i++)
+    {
+        gets(dizi[i]);
+    }
+    for( i=0;i<10;i++)
+    {
+        for( j=0;j<10;j++)
+        {
+            if(strcmp(dizi[i],dizi[j])<0){
+                    char temp[11];
+                      strcpy(temp,dizi[i]);
+                      strcpy(dizi[i],dizi[j]);
+                      strcpy(dizi[j],temp);
+            }
+        }
+    }
+ printf("\n Kelimelerin Sirali Hali: \n");
+for(int i=0;i<10;i++)
+    printf("%s\n",dizi[i]);
+
+    return 0;
+}
