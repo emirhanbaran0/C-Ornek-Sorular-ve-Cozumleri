@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <windows.h>
+int main()
+{
+    system("color F");
+    char cumle[101],ara[101];
+    int i=0,j, dizi[101],k=0,sayac=0;
+    for(int z=0;z<101;z++)
+        dizi[z]=-1;
+    printf("Cumlenizi Giriniz: ");
+    gets(cumle);
+    printf("Cumle icinde neyi arayacigizi giriniz: ");
+    gets(ara);
+    for( i;i<strlen(cumle)-strlen(ara)+1;i++)
+    {
+        for( j=0;j<strlen(ara);j++)
+        {
+            if(cumle[i+j]!=ara[j])
+                    break;
+        }
+        if(j==strlen(ara))
+            dizi[k++]=i;
+    }
+   for(int z=0;z<101;z++){
+        if(dizi[z]!=-1){
+        printf("%d ",dizi[z]);
+        sayac++;
+        }
+   }
+   printf("\nKelminenizde %d tane %s harfi vardir.",sayac,ara);
+        return 0;
+}
