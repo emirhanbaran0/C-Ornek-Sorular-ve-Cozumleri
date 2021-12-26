@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+   int saat,dakika,saniye;
+   for(saat=0;saat<=59;saat++)
+   {
+       for(dakika=0;dakika<=59;dakika++)
+       {
+           for(saniye=0;saniye<=59;saniye++)
+           {
+               printf("%02d:%02d:%02d\r",saat,dakika,saniye);
+               Sleep(1000);  //milisaniye cinsinden deger yazilir 1000milisaniye=1saniye
+           }
+       }
+   }
+    return 0;
+}
