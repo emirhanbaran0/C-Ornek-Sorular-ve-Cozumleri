@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int sayi,yuzlerbasamagi,onlarbasamagi,birlerbasamagi,ara,sabit1=100,sabit2=10;
+    printf("Bir Sayi Degeri Giriniz: ");
+    scanf("%d",&sayi);
+    if (sayi<=999 && 99<sayi)
+    {
+        yuzlerbasamagi=sayi/sabit1;
+         ara=sayi%sabit1;
+         onlarbasamagi=ara/sabit2;
+          birlerbasamagi=ara%sabit2;
+         printf("Sayinizin Yuzler Basamagi: %d\n",yuzlerbasamagi);
+            printf("Sayinizin Onlar Basamagi: %d\n",onlarbasamagi);
+               printf("Sayinizin Birler Basamagi: %d",birlerbasamagi);
+    }
+    else
+        printf("Sayiniz Istenilen Aralikta Degildir!");
+    return 0;
+}
