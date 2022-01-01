@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+   char cumle[101];
+   int a;
+   printf("Cumlenizi Girin: ");
+   gets(cumle);
+   a=strlen(cumle);
+   for(int i=0;i<a;i++)
+   {
+       for(int j=0;j<a;j++)
+       {
+           if(i!=j)
+           { if(cumle[i]!='x')
+           {
+             if(cumle[j]==cumle[i]){
+                cumle[i]='x';
+                cumle[j]='x';
+        }
+        }
+        }
+        }
+        }
+         for(int j=0;j<a;j++)
+   {
+        if(cumle[j]!='x')
+            cumle[j]='y';
+   }
+   printf(cumle);
+    return 0;
+}
