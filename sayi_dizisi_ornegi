@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int arr[6]={14,27,23,100,7,9},sayi ,i=0; //kullanicidan sayi almak için bir sayi degiskeni atandi
+    printf("Bir Sayi Giriniz: ");
+    scanf("%d",&sayi);
+    for( i;i<6;i++)  //sayiyi dizinin elemanlari ile karsilastirmak için for döngüsü kullanildi
+    {
+        if(sayi==arr[i])  //sayi dizide var ise indeksini yazdirdim ve diðer degerlere bakmamasi --bakarsa -1 yazar-- için break kullanildi
+        {
+            printf("%d",i);
+            break;
+        }
+    }
+    if(i==6)  //i'nin degerinin 6'ya ulasmasi aradıgımız sayinin dizide olmadıgını gösterir ve bunun icin -1 yazmamiz gerekir
+     printf("-1");
+    return 0;
+}
