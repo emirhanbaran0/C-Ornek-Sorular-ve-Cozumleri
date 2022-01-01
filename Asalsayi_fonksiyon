@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void asalsayi(int bas,int bit)
+{
+    while(bas<=bit){
+    int kontrol=0;
+    if(bas==2){
+        printf("%d ",bas);
+        bas++;
+    }
+
+    else{
+    for(int i=2;i<bas;i++)
+    if(bas%i==0){
+        kontrol++;
+    }
+
+    if(kontrol==0)
+        printf("%d ",bas);
+    bas++;
+    }
+    }
+}
+int main()
+{
+    int baslangic,bitis;
+    printf("Baslangic Degerini Giriniz: ");
+    scanf("%d",&baslangic);
+    printf("Bitis Degerini Giriniz: ");
+    scanf("%d",&bitis);
+    asalsayi(baslangic,bitis);
+    return 0;
+}
