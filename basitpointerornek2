@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int m=29;
+    int *p;
+    p=&m;
+    printf("m'in degeri: %d  m'in adresi: %d\n",*p,p);
+    printf("m'in degeri: %d  m'in adresi: %d\n",*p,&m);
+    int *ab;
+    ab=&m;
+     printf("m'in degeri: %d  m'in adresi: %d\n",*ab,ab);
+    printf("m'in degeri: %d  m'in adresi: %d\n",*ab,&m);
+    *ab=7;
+    printf("m'in degeri: %d  m'in adresi: %d\n",*ab,ab);
+    *p=3;
+    printf("m'in degeri: %d  m'in adresi: %d\n",*p,&m);
+    printf("%d",m);
+
+    return 0;
+}
