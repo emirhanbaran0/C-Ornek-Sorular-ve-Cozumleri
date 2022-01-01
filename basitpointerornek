@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int m=10;
+    int *z;
+    z=&m;
+    printf("%d adresindeki sayi degeri %d'dir\n",z,*z);
+    int n;
+    int *a;
+    a=&n;
+    printf("%d adresindeki sayi degeri %d'dir\n",a,*a);
+
+    return 0;
+}
