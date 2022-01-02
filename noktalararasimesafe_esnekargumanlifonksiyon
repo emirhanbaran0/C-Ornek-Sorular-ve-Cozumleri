@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <math.h>
+void mesafe(int n,...)
+{   int noktalar[100][2];
+    double sonuc;
+    va_list liste;
+    va_start(liste,n);
+    for(int i=0;i<n;i++)
+        {
+        noktalar[i][0]=va_arg(liste,int);
+        noktalar[i][1]=va_arg(liste,int);
+        }
+    va_end(liste);
+    for(int i=0;i<n-1;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            sonuc=sqrt(pow((noktalar[i][0]-noktalar[j][0]),2)+pow((noktalar[i][1]-noktalar[j][1]),2));
+             printf("Nokta%d ile nokta%d arasindaki mesafe: %lf\n",i+1,j+1,sonuc);
+        }
+    }
+    printf("\n\n\n");
+}
+int main()
+{
+   mesafe(2,5,8,-4,9);
+   mesafe(3,1,2,3,4,4,6);
+   mesafe(4,8,5,6,-3,7,-1,4,2);
+    return 0;
+}
