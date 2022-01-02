@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+int toplama(int n,...)
+{
+    int toplam=0;
+    va_list liste;
+    va_start(liste,n);
+    for(int i=0;i<n;i++)
+    {
+        toplam+=va_arg(liste,int);
+    }
+    va_end(liste);
+    return toplam;
+}
+int main()
+{
+    printf("(toplama(3,12,15,17)=%d\n",toplama(3,12,15,17));
+    printf("(toplama(2,56,98)=%d\n",toplama(2,56,98));
+    printf("(toplama(5,30,12,17,18,21)=%d\n",toplama(5,30,12,17,18,21));
+    printf("(toplama(4,1,2,3,4)=%d\n",toplama(4,1,2,3,4));
+    return 0;
+}
