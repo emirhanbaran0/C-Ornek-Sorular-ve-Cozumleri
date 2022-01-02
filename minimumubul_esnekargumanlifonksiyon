@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <limits.h>
+int min(int n,...)
+{   int enkucuk=INT_MAX,a;
+    va_list liste;
+    va_start(liste,n);
+    for(int i=0;i<n;i++){
+        a=va_arg(liste,int);
+        if(a<enkucuk)
+            enkucuk=a;
+    }
+    va_end(liste);
+    return enkucuk;
+}
+int main()
+{
+    printf("min(3,12,16,18)=%d\n",min(3,12,16,18));
+    printf("min(7,12,25,13,100,108,5,82)=%d\n",min(7,12,25,13,100,108,5,82));
+    printf("min(4,26,43,21,17)=%d\n",min(4,26,43,21,17));
+    printf("min(2,51,51)=%d\n",min(2,51,51));
+    return 0;
+}
