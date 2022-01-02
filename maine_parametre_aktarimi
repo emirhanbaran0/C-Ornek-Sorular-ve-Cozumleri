@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argsay, char *a[])
+{
+    int toplam;
+    if(argsay<3)
+    {
+        printf("Ekisk Parametre!\n");
+        exit(1);
+    }
+    if(argsay>3)
+    {
+        printf("Çok Fazla Parametre!\n");
+        exit(1);
+    }
+
+        toplam= atoi(a[1]) + atoi(a[2]);
+        printf("Toplamlari %d\n",toplam);
+    return 0;
+}
