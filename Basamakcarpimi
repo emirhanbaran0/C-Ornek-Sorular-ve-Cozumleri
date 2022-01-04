@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{   int sayi,birler,onlar,yuzler;
+    printf("Bir Sayi Giriniz: ");
+    scanf("%d",&sayi);
+     yuzler=sayi/100;
+        onlar=sayi%100;
+        birler=onlar;
+        onlar=onlar/10;
+        birler=birler%10;
+        sayi=onlar*yuzler*birler;
+    while(1)
+    {
+        if(sayi>10 && sayi<100 ){
+                 printf("%d\n",sayi);
+                onlar=sayi/10;
+                birler=sayi%10;
+                sayi=birler*onlar;
+
+        }
+            else if(sayi>100 && sayi<1000){
+            printf("%d\n",sayi);
+            yuzler=sayi/100;
+            onlar=sayi%100;
+            birler=onlar;
+            onlar=onlar/10;
+            birler=birler%10;
+            sayi=onlar*yuzler*birler;
+            }
+            else{
+                    printf("%d\n",sayi);
+                break;
+            }
+    }
+
+    return 0;
+}
