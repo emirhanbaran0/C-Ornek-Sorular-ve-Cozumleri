@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+    char string[100];
+    int uzunluk;
+    printf("Ters Cevirmek Istediginiz Metni Giriniz: ");
+    gets(string);
+    uzunluk=strlen(string);
+    for(int k=uzunluk-1;k>=0;k--)       //uzunluk-1 deki -1 terminating karakteri yazdırmamak içindir. 
+        printf("%c",string[k]);
+
+    return 0;
+}
