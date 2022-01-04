@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <windows.h>
+
+int main()
+{
+   system("color fc");
+   char metin[101];
+   int i,a;
+   printf("Metni Giriniz: ");
+   gets(metin);
+   a=strlen(metin);
+   for(i=0;i<a;i++)
+   {
+    int sayac=0;
+    int dizi[101];
+       for(int j=0;j<a;j++)
+       {
+           if(j==i)
+           {
+               ;
+           }
+           else{
+           if(metin[i]==metin[j])
+           {
+               sayac++;
+               metin[j]='*';
+           }
+       }
+       }
+       if(sayac>=1){
+       if(metin[i]!='*')
+        printf("%c",metin[i]);
+       }
+   }
+    return 0;
+}
