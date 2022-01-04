@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float yaricap,alan,cevre,pi_sayisi=3.14, sabit=2;
+    printf("Dairenin Yaricapini Giriniz:  ");
+    scanf("%f",&yaricap);
+    alan=pi_sayisi*(yaricap*yaricap);
+    cevre=pi_sayisi*sabit*yaricap;
+    printf("Dairenin Alani: %.1f \n",alan);
+    printf("Dairenin Cevresi: %.1f",cevre);
