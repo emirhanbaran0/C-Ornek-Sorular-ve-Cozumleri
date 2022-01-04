@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+    char cumle[101],aranan;
+    int dizi[100],k=0,sayac=0;
+    printf("Cumlenizi Giriniz: ");
+    gets(cumle);
+    printf("Aranacak Harfi Giriniz: ");
+    scanf("%c",&aranan);
+    for(int i=0;i<101;i++)
+    {
+        if(cumle[i]==aranan){
+        sayac++;
+        dizi[k++]=i;
+        }
+    }
+    dizi[k]=-1;
+    printf("Aradiginiz %c harfi dizide %d tanedir.\n",aranan,sayac);
+    printf("Indisleri Soyledir: \n");
+    for(int i=0;dizi[i]!=-1;i++)
+        printf("%d ",dizi[i]);
+    return 0;
+}
