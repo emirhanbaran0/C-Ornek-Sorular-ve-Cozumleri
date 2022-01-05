@@ -1,0 +1,118 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+void hamle(int x[],int y[],int sayac)
+{
+    printf("Oyuncunun Hamleleri: ");
+    for(int n=0;n<sayac;n++)
+    {
+        if(x[n]==1)
+            printf("Tas ");
+        else if(x[n]==2)
+            printf("Kagit ");
+        else
+            printf("Makas ");
+    }
+    printf("\n\nBilgisayarin Hamleleri: ");
+    for(int n=0;n<sayac;n++)
+    {
+        if(y[n]==1)
+            printf("Tas ");
+        else if(y[n]==2)
+            printf("Kagit ");
+        else
+            printf("Makas ");
+    }
+
+}
+int main()
+{  srand(time(0));
+   int oh,bh,os=0,bs=0,bd[100],od[100],sayac=0;
+   while(1==1){
+   bh=(rand()%3)+1;
+   bd[sayac]=bh;
+   donusnoktasi:
+   printf("1-TAS   2-KAGIT     3-MAKAS\n\n");
+   printf("Hamleninizi Girin:");
+   scanf("%d",&oh);
+   od[sayac++]=oh;
+   if(oh==1 || oh==2 || oh==3)
+   {
+      if(oh==1)
+      {
+          if(bh==1)
+          {
+            printf("Tas ile tas berabere kalir.\n");
+          }
+          else if(bh=2)
+          {
+            printf("Kagit tasi yener. Bilgisayar kazandi.\n");
+            bs++;
+            if(bs==5)
+                break;
+          }
+          else
+          {
+             printf("Tas makasi yener. Oyuncu kazandi.\n");
+             os++;
+             if(os==5)
+                break;
+          }
+      }
+            if(oh==2)
+      {
+          if(bh==1)
+          {
+            printf("Kagit tasi yener. Oyuncu kazandi.\n");
+            os++;
+            if(os==5)
+                break;
+          }
+          else if(bh=2)
+          {
+            printf("Kagit ile kagit berabere kalir.\n");
+          }
+          else
+          {
+             printf("Makasi kagiti yener. Bilgisayar kazandi.\n");
+             bs++;
+             if(bs==5)
+                break;
+          }
+      }
+            if(oh==3)
+      {
+          if(bh==1)
+          {
+            printf("Tas makasi yener. Bilgisayar kazandi.\n");
+            bs++;
+            if(bs==5)
+                break;
+          }
+          else if(bh=2)
+          {
+            printf("Makas kagiti yener. Oyuncu kazandi.\n");
+            os++;
+             if(os==5)
+                break;
+          }
+          else
+          {
+             printf("Makas ile makas berabere kalir.\n");
+          }
+      }
+   }
+    else{
+        printf("Yanlis bir hamle yaptiniz. Yeni ve gecerli bir hamle girin!!\n\n");
+        goto donusnoktasi;
+        }
+        if(os==5)
+            break;
+   }
+   if(os==5)
+    printf("Oyuncu oyunu %d-%d kazanmistir.\n",os,bs);
+    if(bs==5)
+    printf("Bilgisayar oyunu %d-%d kazanmistir.\n",bs,os);
+    hamle(od,bd,sayac);
+    return 0;
+}
