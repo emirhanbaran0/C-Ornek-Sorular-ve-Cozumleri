@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct ogradres
+{
+    char il[15];
+    char ilce[15];
+    char mahalle[13];
+    char sokak[10];
+};
+struct ogrsinav
+{
+    int vize1;
+    int vize2;
+    int quiz1;
+    int quiz2;
+    int final1;
+};
+struct ogrenci
+{
+    char isim[50];
+    char soyisim[50];
+    int okulno;
+    char sinif[5];
+    struct ogradres adres;
+    struct ogrsinav sinav;
+
+};
+void yazdir(struct ogrenci ogrenciler[])
+{
+    for(int i=0;i<10;i++)
+    {
+           printf("%d. Ogrencinin Bilgileri: \n",i+1);
+           printf("%s %s %d %s\n %s %s %s %s\n %d %d %d %d %d",
+           ogrenciler[i].isim, ogrenciler[i].soyisim,ogrenciler[i].okulno,ogrenciler[i].sinif,
+           ogrenciler[i].adres.il,ogrenciler[i].adres.ilce,ogrenciler[i].adres.mahalle,ogrenciler[i].adres.sokak,
+           ogrenciler[i].sinav.vize1,ogrenciler[i].sinav.vize2,ogrenciler[i].sinav.quiz1,ogrenciler[i].sinav.quiz2,
+           ogrenciler[i].sinav.final1);
+    }
+}
+void ortalama(struct ogrenci ogrenciler[])
+{    float ort=0;
+     int i=0;
+     for(i=0;i<10;i++)
+    {
+        ort=ogrenciler[i].sinav.vize1*15/100;
+        ort+=(ogrenciler[i].sinav.vize2*15/100);
+        ort+=(ogrenciler[i].sinav.quiz1*5/100);
+        ort+=(ogrenciler[i].sinav.quiz2*5/100);
+        ort+=(ogrenciler[i].sinav.final1*60/100);
+    }
+     printf("%d. Ogrencinin not ortalamasi %f'dir.",i+1,ort);
+    ort=0;
+}
+int main()
+{  struct ogrenci ogrenciler[10];
+   for(int i=0;i<10;i++)
+   { printf("%d. Ogrencinin Bilgilerini Giriniz: \n",i+1);
+     printf("AD: ");scanf("%s",ogrenciler[i].isim);
+     printf("SOYAD: ");scanf("%s",ogrenciler[i].soyisim);
+     printf("OKUL NO: ");scanf("%d",&ogrenciler[i].okulno);
+     printf("SINIF: ");scanf("%s",ogrenciler[i].sinif);
+     printf("IL: ");scanf("%s",ogrenciler[i].adres.il);
+     printf("ILCE: ");scanf("%s",ogrenciler[i].adres.ilce);
+     printf("MAHALLE: ");scanf("%s",ogrenciler[i].adres.mahalle);
+     printf("SOKAK: ");scanf("%s",ogrenciler[i].adres.sokak);
+     printf("VIZE1: ");scanf("%d",&ogrenciler[i].sinav.vize1);
+     printf("VIZE2: ");scanf("%d",&ogrenciler[i].sinav.vize2);
+     printf("QUIZ1: ");scanf("%d",&ogrenciler[i].sinav.quiz1);
+     printf("OUIZ2: ");scanf("%d",&ogrenciler[i].sinav.quiz2);
+     printf("FINAL: ");scanf("%d",&ogrenciler[i].sinav.final1);
+   }
+    yazdir(ogrenciler);
+    ortalama(ogrenciler);
+    return 0;
+}
