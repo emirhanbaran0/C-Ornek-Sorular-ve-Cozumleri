@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct zaman
+{
+    int dakika ;
+    int saat ;
+    int saniye;
+};
+void hesapla(struct zaman a,struct zaman b,struct zaman *c)
+{  int ekle;
+    if(a.saniye<b.saniye)
+    {
+    a.dakika--;
+    a.saniye+=60;
+    }
+    c->saniye=a.saniye-b.saniye;
+     if(a.dakika<b.dakika)
+    {
+    a.saat--;
+    a.dakika+=60;
+    }
+    c->dakika=a.dakika-b.dakika;
+    c->saat=a.saat-b.saat;
+
+
+    if(c->saniye>60){
+        ekle=c->saniye/60;
+        c->dakika+=ekle;
+        c->saniye=c->saniye-(ekle*60);
+    }
+    if(c->dakika>60){
+        ekle=c->dakika/60;
+        c->saat+=ekle;
+        c->saniye=c->dakika-(ekle*60);
+    }
+    if(c->dakika<0)
+        c->dakika*=-1;
+     if(c->saat<0)
+        c->saat*=-1;
+         if(c->saniye<0)
+        c->saniye*=-1;
+}
+
+int main()
+{   struct zaman t1,t2,frk;
+    printf("Hesaplamak istediginiz zamanlardan ilkini giriniz: saat,dakika,saniye\n");
+    scanf("%d %d %d",&t1.saat,&t1.dakika,&t1.saniye);
+     printf("Hesaplamak istediginiz zamanlardan ikincisini giriniz: saat,dakika,saniye\n");
+    scanf("%d %d %d",&t2.saat,&t2.dakika,&t2.saniye);
+    hesapla(t1,t2,&frk);
+    printf("Iki zaman arasindaki fark %d saat %d dakika %d saniye'dir.",frk.saat,frk.dakika,frk.saniye);
+    return 0;
+}
