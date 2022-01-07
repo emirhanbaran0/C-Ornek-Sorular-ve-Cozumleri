@@ -51,9 +51,9 @@ void ortalama(struct ogrenci ogrenciler[])
      printf("%d. Ogrencinin not ortalamasi %f'dir.",i+1,ort);
     ort=0;
 }
-int main()
-{  struct ogrenci ogrenciler[10];
-   for(int i=0;i<10;i++)
+void bilgilerial(struct ogrenci ogrenciler[])
+{
+     for(int i=0;i<10;i++)
    { printf("%d. Ogrencinin Bilgilerini Giriniz: \n",i+1);
      printf("AD: ");scanf("%s",ogrenciler[i].isim);
      printf("SOYAD: ");scanf("%s",ogrenciler[i].soyisim);
@@ -69,6 +69,10 @@ int main()
      printf("OUIZ2: ");scanf("%d",&ogrenciler[i].sinav.quiz2);
      printf("FINAL: ");scanf("%d",&ogrenciler[i].sinav.final1);
    }
+}
+int main()
+{  struct ogrenci ogrenciler[10];
+    bilgilerial(ogrenciler);
     yazdir(ogrenciler);
     ortalama(ogrenciler);
     return 0;
