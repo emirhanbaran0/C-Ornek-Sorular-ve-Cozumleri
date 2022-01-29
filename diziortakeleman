@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int ortakbul(int x[],int y[],int *p,int n)
+{   int i,j,k,sayac=0;
+    for(i=0;i<n;i++)
+    {    for(k=0;k<i;k++)
+         {
+             if(x[k]==x[i])
+             break;
+             if(k!=i)
+                continue; //eger k!=i durum boyle ise o sayi x dizisinde daha onceden vardir ve o sayiya bakilmasina gerek yoktur.
+         }
+        for(j=0;j<n;j++)
+        {
+            if(x[i]==y[j])
+                break;
+        }
+              if(n!=j)
+            *(p+sayac++)=x[i];
+    }
+    return p;
+}
+int main()
+{
+    srand(time(0));
+    int a[50],b[50],c[50];
+    int n=50;
+    for(int i=0;i<50;i++)
+    {
+        a[i]=(rand()%1000)+1;
+        b[i]=(rand()%1000)+1;
+        c[i]=-1;
+    }
+    printf("A dizisinin elemanlari: ");
+    for(int i=0;i<50;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    printf("\n\nB dizisinin elemanlari: ");
+    for(int i=0;i<50;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    ortakbul(a,b,c,n);
+    printf("\n\nIki dizinin ortak elemanlari: ");
+    for(int i=0;i<50;i++)
+    {
+        if(c[i]==-1)
+            break;
+        else
+            printf("%d ",c[i]);
+    }
+    return 0;
+}
