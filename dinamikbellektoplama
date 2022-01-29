@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{   int n,m,k;
+    char *dizi;
+    float *top,t=0;
+    printf("Dizinizin Eleman Sayisini Giriniz: ");
+    scanf("%d",&n);
+    top=(float*)malloc(sizeof(float)*n);
+    printf("Dizinin Elemanlarini Giriniz: \n");
+    for(int i=0;i<n;i++)
+    {
+     scanf("%f",(top+i));
+     t+=*(top+i);
+    }
+    printf("Dizinizin Elemanlari Toplami %f  Ortalamasi %f'dir.",t,t/n);
+    void free(void *top);
+
+    return 0;
+}
