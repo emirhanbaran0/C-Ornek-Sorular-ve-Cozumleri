@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{  int dizi1[4],dizi2[3],dizi3[3],dizi4[10],m=0;
+    printf("Birinci Sayi Dizinizi Giriniz: \n");
+    for(int i=0;i<4;i++)
+        scanf("%d",&dizi1[i]);
+    printf("Ikinci Sayi Dizinizi Giriniz: \n");
+    for(int i=0;i<3;i++)
+        scanf("%d",&dizi2[i]);
+        printf("Ucuncu Sayi Dizinizi Giriniz: \n");
+    for(int i=0;i<3;i++)
+        scanf("%d",&dizi3[i]);
+        for(int i=0;i<4;i++)
+        {
+            dizi4[m]=dizi1[i];
+            m+=3;
+        }
+
+
+        m=1;
+           for(int i=0;i<3;i++)
+        {
+            dizi4[m]=dizi2[i];
+            m+=3;
+        }
+        m=2;
+          for(int i=0;i<4;i++)
+        {
+           dizi4[m]=dizi3[i];
+            m+=3;
+        }
+       for(int i=0;i<10;i++)
+        printf("%d ",dizi4[i]);
+    return 0;
+}
