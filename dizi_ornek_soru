@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int dizi[6],b,dizi2[5],c=0;
+    for(c;c<=5;c++)
+    {
+        printf("Dizinin %d. elemanini giriniz: ",c+1);
+        scanf("%d",&dizi[c]);
+    }
+     for(int a=0;a<=5;a++)
+    {
+        printf("%d ",dizi[a]);
+    }
+
+    printf("\nWhich element will delete in array? ");
+    scanf("%d",&b);
+   for(int k=0;k<=5;k++)
+   {
+       for(int j=0;j<b;j++)
+       {
+               dizi2[j]=dizi[j];
+           }
+            for(int j=b+1;j<=k;j++)
+       {
+               dizi2[k-1]=dizi[j];
+           }
+       }
+        for(int a=0;a<=4;a++)
+    {
+        printf("%d ",dizi2[a]);
+    }
+
+    return 0;
+}
