@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+int main()
+{   srand(time(0));
+    char *dizi,aranan[2]={'(',')'};
+    int n,sayac=0;
+    printf("Dizinin Kac Elemanli Olacagini Giriniz: ");
+    scanf("%d",&n);
+    dizi=(char*)malloc(sizeof(char)*n);//dizinin istenilen eleman sayisinca olusturulmasi
+    for(int i=0;i<n;i++)  //dizinin rastgele doldurulmasi
+    {
+        dizi[i]=(rand()%2)+40;
+    }
+    for(int i=0;i<n;i++)
+    {
+        printf("%c",dizi[i]);
+    }
+    printf("\n\n");
+    int kontrolsayisi=strlen(dizi)-strlen(aranan)+1;  //bu sayi kac kere kontrol yapacagimizi verir.
+    for(int i=0;i<kontrolsayisi;i++)
+    {   int kontrol=0;
+        for(int j=0;j<2;j++)
+            if(aranan[j]==dizi[i+j])
+               kontrol++; 
+        if(kontrol==2)  //kontrol strlen(aranan) yani 2 ye ulastiysa aradigimiza ulastigimiz anlamina gelir ve sayac 1 artirilir. 
+            sayac++;
+    }
+    printf("Dizinizde %d kez full parantez bulunmustur. ",sayac);
+
+    return 0;
+}
